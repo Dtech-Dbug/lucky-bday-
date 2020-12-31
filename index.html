@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luck & Leap</title>
+</head>
+<body>
+
+    <header style="text-align: center;">
+       <h1>Luck & Leap</h1> 
+    </header>
+    <hr>
+
+    <div class="about" style="text-align: center;">
+        <p style="font-size: 23px;">Let us find out whether your B'day is lucky or not!✨</p>
+
+
+        <p style="font-size: 21px;"> <i> Note: We do not intend to use your information elsewhere, this is just fun , and the information you enterted will be lost upon refresh.</i></p>
+    </div>
+    <hr>
+    <hr>
+
+    <div class="date">
+
+
+        <h2>Enter You Birthday.</h2>
+
+        <label for="day">Day:</label>
+        <input class="day" type="number" placeholder="dd">
+
+        <label for="month">Month:</label>
+        <input class="month" type="number" placeholder="mm">
+
+        <label for="year">Year:</label>
+        <input class= "year" type="number" placeholder="yyyy">
+
+        <button style="margin-top: 1rem; margin-left: 25%;" id="button">
+            Check Birthday Number.
+        </button>
+
+        <div class="1">
+            <p> <b> The sum of all the digits of your birthday is:  <span style="text-decoration: underline;"  class="result"></span> </b> </p>
+
+        </div>
+    </div>
+    <hr>
+    <hr>
+
+    <div class="luckyNumber">
+        <label for="lucky number" style="font-size: 26px; ">
+        Enter your lucky Number:
+        
+            <input class="luckyN" type="number">
+        
+        </label>
+
+        <button id="button2">
+            Check Lucky Number.
+        </button>
+        <div class="2">
+            <b>Your Lucky Number Is: <span class="result2" style="text-decoration: underline;"></span> </b>
+
+        </div>
+    </div>
+    <hr>
+
+    <div class="final">
+        <h2>Click on the button below to find out if your birthday is lucky.</h2>
+          <span style="font-size: 13px;"> <i>[Please note: This is Just for fun. nd the basis of calculation is whther your birthday sum is divisible by your lucky number]</i>
+        
+           <div class="button3">
+
+            <button id ="button3">
+                Click On Me
+            </button>
+           </div>
+
+           <div class="final-result">
+               <img style="width: 100%;" id="gif"  src="./gif1.gif" alt="" hidden>
+
+           </div>
+           <div id="final"></div>
+        
+    </div>
+
+   
+
+
+
+    <script>
+  const dayInput = document.querySelector(".day")
+  const monthInput = document.querySelector(".month")
+  const yearInput = document.querySelector(".year")
+  const rslt1 =document.querySelector('.result')
+  const ln = document.querySelector(".luckyN")
+  const rslt2 = document.querySelector('.result2')
+  const rslt3 = document.querySelector('.final-result')
+  const gif1 = document.querySelector('#gif')
+  const rsltF = document.getElementById('final')
+
+  
+ 
+  const btn = document.getElementById('button')
+  const btn2 = document.getElementById('button2')
+  const btn3 = document.getElementById('button3')
+  //console.log(btn3)
+ // console.log(inputs)
+ // console.log(btn)
+
+     var dd = parseInt (dayInput.value);
+    var mm =  parseInt (monthInput.value);
+    var yyyy =parseInt (yearInput.value)
+    var date = dd + mm + yyyy
+    let inputLuckyN = parseInt(ln.value)
+
+
+ function clickHandler(click){
+    var dd = parseInt (dayInput.value);
+    var mm =  parseInt (monthInput.value);
+    var yyyy =parseInt (yearInput.value)
+    var date = dd + mm + yyyy  ;
+    
+    rslt1.innerHTML = date
+    
+ }
+
+ function clickHandler2(click){
+     let inputLuckyN = parseInt(ln.value)
+     
+     rslt2.innerHTML=  inputLuckyN
+
+ }
+
+
+  function clickHandler3(click){
+    var dd = parseInt (dayInput.value);
+    var mm =  parseInt (monthInput.value);
+    var yyyy =parseInt (yearInput.value)
+    var date = dd + mm + yyyy  ;
+    let inputLuckyN = parseInt(ln.value)
+    
+		gif1.removeAttribute('hidden');
+        rslt3.classList.add('fadeInDown');
+        
+        console.log(date)
+        if( date % inputLuckyN=== 0){
+            rsltF.innerHTML= "Lucky!"
+        }else{
+            rsltF.innerHTML= "oops!"
+        }
+        }
+	
+
+  
+  btn.addEventListener("click" , clickHandler)
+  btn2.addEventListener('click' , clickHandler2)
+  btn3.addEventListener('click' , clickHandler3)
+
+
+    </script>
+    
+</body>
+
+<style>
+    body{
+        text-align: center;
+        border: 3px solid black;
+        margin: 0 20%;
+        padding: 2rem 2rem;
+    }
+</style>
+</html>
