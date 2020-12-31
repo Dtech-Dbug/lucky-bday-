@@ -8,7 +8,7 @@
 <body>
 
     <header style="text-align: center;">
-       <h1>Luck & Leap</h1> 
+       <h1 style="background-color: crimson;">   <span style="color:black;">Luck</span>   & Leap</h1> 
     </header>
     <hr>
 
@@ -24,18 +24,18 @@
     <div class="date">
 
 
-        <h2>Enter You Birthday.</h2>
+        <h2 style="color: black; background-color: crimson;">🎉Enter your Birthday.🎉</h2>
 
         <label for="day">Day:</label>
-        <input class="day" type="number" placeholder="dd">
+        <input style=" box-shadow:4px  3px black ; width: 3em;margin-right: 0.3em;" class="day" type="number" placeholder="dd">
 
         <label for="month">Month:</label>
-        <input class="month" type="number" placeholder="mm">
+        <input style="width: 3em; box-shadow:4px  3px black;margin-right: 0.3em;" class="month" type="number" placeholder="mm">
 
         <label for="year">Year:</label>
-        <input class= "year" type="number" placeholder="yyyy">
+        <input style="width: 6em; box-shadow:4px  3px black;" class= "year" type="number" placeholder="yyyy">
 
-        <button style="margin-top: 1rem; margin-left: 25%;" id="button">
+        <button style="margin-top: 1rem; margin-left: 25%;width: 6rem; border-radius: 50%;transform: translateX(-3rem); box-shadow:4px  3px black;outline: none;" id="button">
             Check Birthday Number.
         </button>
 
@@ -48,26 +48,30 @@
     <hr>
 
     <div class="luckyNumber">
-        <label for="lucky number" style="font-size: 26px; ">
-        Enter your lucky Number:
+        <label for="lucky number" style="font-size: 26px;text-decoration:underline; ">
+            <span>🍀 </span> Enter your lucky Number <span>🍀 </span>
         
-            <input class="luckyN" type="number">
+            <input style="width: 4em; box-shadow:4px  3px black;" class="luckyN" type="number">
         
         </label>
 
-        <button id="button2">
+        <button id="button2" style="width: 6em;border-radius: 45%; outline: none; box-shadow:4px  3px black;"> 
+            
             Check Lucky Number.
         </button>
         <div class="2">
-            <b>Your Lucky Number Is: <span class="result2" style="text-decoration: underline;"></span> </b>
+            <b>Your Lucky Number Is: <span class="result2" style="text-decoration: none;"></span> </b>
 
         </div>
     </div>
     <hr>
 
     <div class="final">
+        <i style="background-color: black;">[Please note: This is Just for fun and the basis of calculation is whther your birthday sum is divisible by your lucky number]</i>
         <h2>Click on the button below to find out if your birthday is lucky.</h2>
-          <span style="font-size: 13px;"> <i>[Please note: This is Just for fun. nd the basis of calculation is whther your birthday sum is divisible by your lucky number]</i>
+          <span style="font-size: 13px;">
+
+           
         
            <div class="button3">
 
@@ -75,13 +79,21 @@
                 Click On Me
             </button>
            </div>
+           <div style="font-size: 3rem" class="scroll-down">
+
+        </div>
 
            <div class="final-result">
                <img style="width: 100%;" id="gif"  src="./gif1.gif" alt="" hidden>
 
            </div>
-           <div id="final"></div>
+           <div id="final" style="font-size: 2rem; color: black; background-color: crimson;"></div>
         
+
+            <div class="footer-gif" ; hidden>
+                <h2>Thanks for using this.This is nothing serios,just for fun. But,hey just so you know...👇</h2>
+                <img style="width: 100%;" src="https://media.giphy.com/media/12XDYvMJNcmLgQ/giphy.gif" alt="">
+            </div>
     </div>
 
    
@@ -98,6 +110,8 @@
   const rslt3 = document.querySelector('.final-result')
   const gif1 = document.querySelector('#gif')
   const rsltF = document.getElementById('final')
+  const scrollD = document.querySelector(".scroll-down")
+  const footerGif = document.querySelector(".footer-gif")
 
   
  
@@ -139,6 +153,8 @@
     var yyyy =parseInt (yearInput.value)
     var date = dd + mm + yyyy  ;
     let inputLuckyN = parseInt(ln.value)
+
+    scrollD.innerHTML= "Scroll Down Below⬇️"
     
 		gif1.removeAttribute('hidden');
         rslt3.classList.add('fadeInDown');
@@ -149,6 +165,8 @@
         }else{
             rsltF.innerHTML= "oops!"
         }
+
+        footerGif.removeAttribute('hidden')
         }
 	
 
@@ -166,8 +184,15 @@
     body{
         text-align: center;
         border: 3px solid black;
+        color: white;
         margin: 0 20%;
         padding: 2rem 2rem;
+        background-color: crimson;
+        box-shadow: 9px 6px 9px black;
+        background-image: url(/timothy-dykes-rgJI8jSpLXQ-unsplash.jpg);
+        background-size: 100% 100%;
+        display: flex;
+        flex-direction: column;
     }
 </style>
 </html>
